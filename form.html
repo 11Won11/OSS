@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week3-assignment#2-1</title>
+</head>
+<body>
+    <h1> Dynamic Web page</h1>
+    <div class = "input_list">
+        <input type = "text" name = "list" id = "input_list" /> 
+        <button id = "add_list"> 추가 </button> 
+        <button id = "delete_list"> 삭제 </button> 
+    </div>
+
+    <ul id = list> </ul>
+    <script>
+        const inputList = document.getElementById("input_list");
+        const addList = document.getElementById("add_list");
+        const deleteList = document.getElementById("delete_list");
+        const list = document.getElementById("list");
+
+        addList.addEventListener("click", function () {
+            const items = inputList.value.split(",");
+            items.forEach(i => {
+            const item = i.trim();
+            if (item !== "") {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            }
+        });
+            inputAdd.value = "";
+            inputAdd.focus();
+        });
+
+        deleteList.addEventListener("click", function () {
+            list.innerHTML = "";  
+            inputList.value = "";
+            inputList.focus();
+        });
+    </script>
+</body>
+</html>

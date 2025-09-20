@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week3-assignment#2-1</title>
+</head>
+<body>
+    <div>
+        <img src = "https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt = "IMG">
+    </div>
+    <h1> Checkout form </h1>
+    <h2> 
+        Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br />
+        validation state that can be triggered by attempting to submit the form without completing it.
+    </h2>
+    <form class = "form_type">
+        <div class = "div_billing_address">
+            <h3 >Billing address</h3>
+            <div class = "div_input_name">
+                <label for = "input_first_name"> First name </label> 
+                <label for = "input_last_name"> Last name </label> <br />
+                <input type = "text" name = "first_name" id = "input_first_name"/>  
+                <input type = "text" name = "last_name" id = "input_last_name"/> <br />
+            </div>
+            <div class = "div_input_username">
+                <label for = "input_username"> Username </label> <br />
+                <input type = "text" name = "username" id = "input_username" placeholder = "Username"/> <br />
+            </div>
+            <div class = "div_input_email">
+                <label for = "input_email"> Email <span> (Optional) </label> <br />
+                <input type = "email" name = "last_email" id = "input_email"/> <br />
+            </div>
+            <div class = "div_input_address1">
+                <label for = "input_address1"> Address </label> <br />
+                <input type = "text" name = "address1" id = "input_address1"/> <br />
+            </div>
+            <div class = "div_input_address2">
+                <label for = "input_address2"> Address2 <span> (Optional) </span> </label> <br />
+                <input type = "text" name = "address2" id = "input_address2"/> <br />
+            </div>
+            <div class = "div_input_country">
+                <label for = "input_country"> Country </label>
+                <label for = "input_state"> State </label>
+                <label for = "input_zip"> Zip </label> <br />
+                <select id = "input_country" name = "country" >
+                    <option> Choose... </option>
+                    <option> United States </option>
+                </select>
+                <select id = "input_state" name = "state" >
+                    <option> Choose... </option>
+                    <option> California </option>
+                </select>
+                <input type = "text" name = "zip" id = "input_zip"/> <br />
+            </div>
+            <div class = "div_checkbox">
+                <input type = "checkbox" id = "input_checkbox_1" name = "input_checkbox" /> 
+                <label for = "input_checkbox_1"> Shipping address is the same as my billing address </label> <br />
+                <input type = "checkbox" id = "input_checkbox_2" name = "input_checkbox" />
+                <label for = "input_checkbox_2"> Save this information for next time </label>
+            </div>
+            <div class = "div_payment_radio">
+                <h4> Payment </h4>
+                <input type = "radio" id = "input_radio_1" name = "input_radio" /> 
+                <label for = "input_radio_1"> Credit card </label> <br />
+                <input type = "radio" id = "input_radio_2" name = "input_radio" /> 
+                <label for = "input_radio_2"> Debit card </label> <br />
+                <input type = "radio" id = "input_radio_3" name = "input_radio" />
+                <label for = "input_radio_3"> PayPal </label> <br />
+            </div> <br />
+            <div class = "div_textarea">
+                <label for = "textarea"> MEMO </label> <br />
+                <textarea id = "textarea" name = "textarea1" cols = "10"></textarea>
+            </div> <br />
+            <div class = "div_input_card_info">
+                <label for = "input_card_name"> Name on card </label> 
+                <label for = "input_card_number"> Credit card number </label> <br />
+                <input type = "text" name = "card_name" id = "input_card_name"/> 
+                <input type = "text" name = "card_number" id = "input_card_number"/> <br />
+            </div>
+            <div class = "div_input_card_sensitive_info">
+                <label for = "input_card_expiration"> Expiration </label> 
+                <label for = "input_card_cvv"> CVV </label> <br />
+                <input type = "date" name = "card_expiration" id = "input_card_expiration"/> 
+                <input type = "text" name = "card_cvv" id = "input_card_cvv"/> <br /> 
+            </div>
+            <input type = "submit" value = "Continue to checkout" size = "50px"/>
+        </div>
+        <div class = "div_cart">
+            <div class = "div_cart_info">
+                <span class = "your_cart"> Your cart </span>
+                <span class = "cart_number"> 3 </span>   
+            </div> 
+            <div class = "div_cart_content">
+                <div class = "div_item_info">
+                    <div class = "div_item_detail_info">
+                        <span class = "item_name"> Product name </span>
+                        <span class = "item_price"> $12 </span>
+                    </div>
+                    <span class = "item_description"> Brief description </span>
+                </div>
+                <div class = "div_item_info">
+                    <div class = "div_item_detail_info">
+                        <span class = "item_name"> Second product </span>
+                        <span class = "item_price"> $8 </span>
+                    </div>
+                    <span class = "item_description"> Brief description </span>
+                </div>
+                <div class = "div_item_info">
+                    <div class = "div_item_detail_info">
+                        <span class = "item_name"> Third item </span>
+                        <span class = "item_price"> $5 </span>
+                    </div>
+                    <span class = "item_description"> Brief description </span>
+                </div>
+                <div class = "div_item_info_sp">
+                    <div class = "div_item_detail_info">
+                        <span class = "item_name_sp"> Promo code </span>
+                        <span class = "item_price_sp"> -$5 </span>
+                    </div>
+                    <span class = "item_description_sp"> Brief description </span>
+                </div>
+                <div class = "div_total">
+                    <span class = "item_name"> Total (USD) </span>
+                    <span class = "item_price"> $20 </span>
+                </div>
+            </div>
+            <div class = "input_promo_code">
+                <input type = "text" name = "promo_code" id = "input_promo_code" placeholder = "Promo code"/> 
+                <input class = "input_redeem" type = "reset" value = "Redeem" />
+            </div>
+        </div>
+    </form>  
+</body>
+</body>
+</html>
