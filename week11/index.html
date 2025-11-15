@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link  rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+    <title>Assignment 4-2</title>
+</head>
+<body>
+    목록
+    <div id = "div_list"></div>
+    <button id = "btn_list"> 목록 보기 </button>
+    
+    id : <input type ="text" id = "input_id" />
+    <div id = "modal" style = "display : none;">
+        name : <input type ="text" id = "input_name" />
+        age : <input type ="number" id = "input_age" />
+        studentNumber : <input type ="number" id = "input_studentNumber" />
+        region : <input type ="text" id = "input_region" />
+    </div>
+    <button id = "btn_add"> 입력하기 </button>
+    <button id = "btn_update"> 수정하기 </button>
+    <button id = "btn_delete"> 삭제하기 </button>
+    <script>
+        $(function(){
+            $("#btn_add").click(function(){
+                alert("add students");
+                $("#modal").show();
+                const xhr = new XMLHttpRequest(); 
+                xhr.open("POST", "https://6916d86ba7a34288a27e9b23.mockapi.io/user"); 
+                xhr.setRequestHeader("content-type", "application/json"); 
+                let data = {name: $("#input_name").val(), age: $("#input_age").val(), studentNumber: $("#input_studentNumber").val(), region: $("#input_region").val()}; 
+                xhr.send(JSON.stringify(data)); 
+                xhr.onload = () => { 
+                if (xhr.status === 200) { 
+                    let res = JSON.parse(xhr.response); 
+                } else { 
+                    console.log(xhr.status, xhr.statusText); 
+                } 
+            } 
+            });    
+            $("#btn_list").click(function(){
+                $("#modal").hide();
+                alert("get students");
+                const xhr = new XMLHttpRequest(); 
+                xhr.open("GET", "https://6916d86ba7a34288a27e9b23.mockapi.io/user"); 
+                xhr.setRequestHeader("content-type", "application/json"); 
+                xhr.send(); 
+                xhr.onload = () => { 
+                if (xhr.status === 200) { 
+                    let res = JSON.parse(xhr.response); 
+                    //alert(JSON.stringify(res))
+                    $("#div_list").empty();
+                    res.forEach(function(each){
+                        $("#div_list").append(`<div>${each.id} : ${each.name} : ${each.age} : ${each.studentNumber} : ${each.region}</div>`)
+                    });
+                } else { 
+                    console.log(xhr.status, xhr.statusText); 
+                } 
+            } 
+            });  
+            $("#btn_update").click(function(){
+                alert("update students");
+                $("#modal").show();
+                const xhr = new XMLHttpRequest(); 
+                xhr.open("PUT", "https://6916d86ba7a34288a27e9b23.mockapi.io/user/" + $("#input_id").val()); 
+                xhr.setRequestHeader("content-type", "application/json"); 
+                let data = {id: $("#input_id").val(), name: $("#input_name").val(), age: $("#input_age").val(), studentNumber: $("#input_studentNumber").val(), region: $("#input_region").val()};
+                xhr.send(JSON.stringify(data)); 
+                xhr.onload = () => { 
+                if (xhr.status === 200) { 
+                    let res = JSON.parse(xhr.response); 
+                    //alert(JSON.stringify(res))
+                } else { 
+                    console.log(xhr.status, xhr.statusText); 
+                } 
+            } 
+            }); 
+            $("#btn_delete").click(function(){
+                alert("delete students");
+                $("#modal").hide();
+                const xhr = new XMLHttpRequest(); 
+                xhr.open("DELETE", "https://6916d86ba7a34288a27e9b23.mockapi.io/user/" + $("#input_id").val()); 
+                xhr.setRequestHeader("content-type", "application/json"); 
+                xhr.send(); 
+                xhr.onload = () => { 
+                if (xhr.status === 200) { 
+                    let res = JSON.parse(xhr.response); 
+                } else { 
+                    console.log(xhr.status, xhr.statusText); 
+                } 
+            } 
+            }); 
+        });
+    </script>
+</body>
+</html>

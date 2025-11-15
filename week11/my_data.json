@@ -1,0 +1,74 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Jin",
+      "age": "22",
+      "studentNumber": "22200803",
+      "region": "Pohang"
+    },
+    {
+      "id": "2",
+      "name": "David",
+      "age": 32,
+      "studentNumber": 22100121,
+      "region": "Seoul"
+    },
+    {
+      "id": "3",
+      "name": "Rebecca",
+      "age": 20,
+      "studentNumber": 22500021,
+      "region": "Uiwang"
+    },
+    {
+      "id": "4",
+      "name": "Julie",
+      "age": 25,
+      "studentNumber": 22000561,
+      "region": "Busan"
+    },
+    {
+      "id": "5",
+      "name": "Hosea",
+      "age": 28,
+      "studentNumber": 21900812,
+      "region": "Chungju"
+    },
+    {
+      "id": "6",
+      "name": "James",
+      "age": 21,
+      "studentNumber": 22400023,
+      "region": "Jeonju"
+    },
+    {
+      "id": "7",
+      "name": "Esther",
+      "age": 30,
+      "studentNumber": 21600189,
+      "region": "Wonju"
+    },
+    {
+      "id": "8",
+      "name": "Paul",
+      "age": 27,
+      "studentNumber": 22200463,
+      "region": "Incheon"
+    },
+    {
+      "id": "9",
+      "name": "Matthew",
+      "age": 41,
+      "studentNumber": 21200789,
+      "region": "Jeju"
+    },
+    {
+      "id": "10",
+      "name": "Korea",
+      "age": 26,
+      "studentNumber": 21800852,
+      "region": "Dokdo"
+    }
+  ]
+}
